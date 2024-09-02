@@ -32,3 +32,8 @@
 </p>
 
 ## TODO
+
+
+## Reference
+
+Park, Y. Teleopeation System using Apple Vision Pro (Version 0.1.0) [Computer software]. https://github.com/Improbable-AI/VisionProTeleop
