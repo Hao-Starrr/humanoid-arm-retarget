@@ -1,25 +1,9 @@
-"""
-Author: WANG Wenhao
-Date: 2024-08-02
-Version: 1.0.0
-copyright (c) 2024 All Rights Reserved
-"""
 
 import importlib
 import yaml
 import numpy as np
 import scipy.optimize as opt
 import quaternionic
-
-
-def left_fk(joint_angles):
-    # 用户自定义的左臂FK函数实现
-    pass
-
-
-def right_fk(joint_angles):
-    # 用户自定义的右臂FK函数实现
-    pass
 
 
 def calculate_angle_between_vectors(v1, v2):
@@ -31,7 +15,7 @@ def calculate_angle_between_vectors(v1, v2):
 
 
 class ArmRetarget:
-    def __init__(self, config_file):
+    def __init__(self, config_file="open_loong.yaml"):
         # 加载配置文件
         self.config = self.load_config(config_file)
 

@@ -1,9 +1,3 @@
-"""
-Author: WANG Wenhao
-Date: 2024-08-02
-Version: 1.0.0
-copyright (c) 2024 All Rights Reserved
-"""
 
 import numpy as np
 import time
@@ -20,7 +14,7 @@ class SnapMonitorOneSide:
         self.prev_movement1 = None
         self.last_update_time = 0
 
-        # 设置阈值
+        # set threshold
         self.cooldown = 1.1
         self.threshold_speed13 = 0.20
         self.threshold_speed03 = 0.20
@@ -45,21 +39,20 @@ class SnapMonitorOneSide:
         if self.hand_side == 'right':
             movement1 = -thumbTipPos[0] + thumbTipPos[1] + thumbTipPos[2]
 
-        # 初始化 previous 值
+        # initialize previous values
         if self.prev_distance13 is None:
             self.prev_distance13 = distance13
             self.prev_distance03 = distance03
             self.prev_movement1 = movement1
             return
 
-        # 计算速度
+        # calculate the speed
         speed13 = (distance13 - self.prev_distance13)/time_interval
         speed03 = (self.prev_distance03 - distance03)/time_interval
         speed1 = (movement1 - self.prev_movement1)/time_interval
         distance23 = np.linalg.norm(indexTipPos - middleTipPos)
 
-        # 判断是否打响指
-        # distance23 > 0.02
+        # main function
         if (speed13 > self.threshold_speed13 and
             speed03 > self.threshold_speed03 and
                 speed1 > self.threshold_speed1):
@@ -69,7 +62,7 @@ class SnapMonitorOneSide:
         else:
             self.snap_detected = False
 
-        # 更新 previous 值
+        # update previous value
         self.prev_distance13 = distance13
         self.prev_distance03 = distance03
         self.prev_movement1 = movement1

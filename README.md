@@ -1,3 +1,4 @@
+<div style="display:none">
 <div align="center">
 
   <h1 align="center"> Humanoid Arm Retarget </h1>
@@ -31,9 +32,64 @@
   </a>
 </p>
 
-## TODO
+## Introduction
+
+
+## Demo
+
+
+## Difference with other repo
+open Television 
+provide ik
+
+unitree
+ik different, provide interface to other robot
+casadi+pin vs scipy+fk
+
+anyteleop
+cobot vs humanoid arm
+
+dex-retargeting
+inspire hand
+
+
+## File Structure
+
+```
+-----
+|   teleop.py
+|         [main function, a loop in 90hz to send commmand to the robot]
+|   arms_retarget.py
+|         [input human arm frames, optimize and output the 14 joint angles ]
+|   hands_retarget.py
+|         [input human hand frames, calculate the 6 angles per hand]
+|   gesture.py
+|         [update the values in main loop, detect the snap]
+|   camera_interface.py
+|         [capture the images from different cameras]
+|   sliverscreen.py
+|         [upload the vision streaming to local server]
+|   interface.py
+|         [controllers, send the commands to robots]
+|
+|   fftai_gr1.yaml
+|   open_loong.yaml
+|         [configuration files]
+|
++---avp_stream
++---Tracking Streamer
+|   Tracking Streamer.xcodeproj
+|         [VisionPro app]
+```
+
+## Install
 
 
 ## Reference
 
 Park, Y. Teleopeation System using Apple Vision Pro (Version 0.1.0) [Computer software]. https://github.com/Improbable-AI/VisionProTeleop
+
+Rakita, D., Mutlu, B., & Gleicher, M. (2018). RelaxedIK: Real-time Synthesis of Accurate and Feasible Robot Arm Motion. In Proceedings of Robotics: Science and Systems. Pittsburgh, Pennsylvania. 
+
+Cheng, X., Li, J., Yang, S., Yang, G., & Wang, X. (2024). Open-TeleVision: Teleoperation with Immersive Active Visual Feedback. arXiv preprint arXiv:2407.01512.
+</div>
