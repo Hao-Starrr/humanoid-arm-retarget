@@ -38,8 +38,8 @@ struct 🌐RealityView: View {
             let webViewEntity = attachments.entity(for: Self.webViewAttachmentID)!
             webViewEntity.position = [0, 1.0, -1.5] // move the entity to the front
 
+            // comment out the following line if you do not need first person view
             content.add(webViewEntity)
-            // content.add(resultLabelEntity)
 
         } attachments: {
             Attachment(id: Self.attachmentID) {
