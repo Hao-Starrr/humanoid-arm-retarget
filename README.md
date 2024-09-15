@@ -178,6 +178,8 @@ It is the teleoperation main loop. It should be able to give the joint angles to
 
 4. Send the joint angles to the robot.
 
+Snap your left fingers to send the data to the robot.
+
 
 
 ## Reference
