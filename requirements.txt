@@ -1,0 +1,9 @@
+asyncio
+opencv-python
+numpy
+vuer
+pyrealsense2
+pyzed
+quaternionic
+scipy
+pyyaml

@@ -220,6 +220,14 @@ class ArmRetarget:
         q_2d_r = self._solve_wrist_angles(
             right_wrist, right_forearmWrist, chirality="right")
 
+        # 机器人的fk有不同的起点
+        # 人的坐标起点是VR world frame
+        # 因此要把人的手腕和前臂的起点转换到机器人的左右手base坐标系
+        # 这是第一个矩阵乘法@的作用
+
+        # 因为系的定义不同，人和机器人在同样姿态下ee的系也不同
+        # 需要对其两者的ee，才能比较误差
+        # 这是第二个矩阵乘法@的作用
         left_forearmWrist = self.left_base @ left_forearmWrist @ self.left_wrist
         right_forearmWrist = self.right_base @ right_forearmWrist @ self.right_wrist
         pos = np.vstack((left_forearmWrist[:3, 3], right_forearmWrist[:3, 3]))

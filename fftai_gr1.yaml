@@ -6,21 +6,28 @@ lower_bounds: [-150, -15, -110, -120, -110, -150, -165, -110, -120, -110]
 upper_bounds: [30, 165, 110, 0, 110, 30, 15, 110, 0, 110]
 init_q: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
+# VR world frame in left base frame
 left_base:
   - [0, 1, 0, 0]
   - [-1, 0, 0, 0]
   - [0, 0, 1, -1.2568]
   - [0, 0, 0, 1]
+
+# VR world frame in right base frame
 right_base:
   - [0, 1, 0, 0]
   - [-1, 0, 0, 0]
   - [0, 0, 1, -1.2568]
   - [0, 0, 0, 1]
+
+# robot ee frame in human left wrist frame
 left_wrist:
   - [0, 0, 1, 0]
   - [0, -1, 0, 0]
   - [1, 0, 0, 0]
   - [0, 0, 0, 1]
+
+# robot ee frame in human right wrist frame
 right_wrist:
   - [0, 0, -1, 0]
   - [0, -1, 0, 0]
