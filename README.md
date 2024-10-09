@@ -76,10 +76,7 @@ Except for the first video 1.1x speed for GIF compression, all the videos are at
 
 ### Short Tasks
 
-Placing 3mm-diameter wire in 5mm fork:
 <img src="./assets/place wire.gif" width="600">
-<br>
-Stacking 2 coke bottles:
 <img src="./assets/stack coke.gif" width="600">
 
 ### Long Tasks with Visualizations
@@ -88,7 +85,7 @@ Cleaning the table:
 
 <a href="https://www.youtube.com/watch?v=McLAlGZYsGI">
   <img src="https://img.youtube.com/vi/McLAlGZYsGI/0.jpg" width="600" height="400" alt="清理桌子视频">
-</a>
+</a>  
 
 <br>
 
