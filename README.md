@@ -64,8 +64,11 @@ Except for the first video 1.1x speed for GIF compression, all the videos are at
 ### Hands
 
 <!-- <img src="./assets/dex hand.gif" width="450"> -->
-<img src="./assets/dex hand2.gif" width="400">
-<img src="./assets/dex hand3.gif" width="400">
+
+<div style="display: flex; gap: 5px;">
+  <img src="./assets/dex hand2.gif" width="400">
+  <img src="./assets/dex hand3.gif" width="400">
+</div>
 
 ### Upper body
 
@@ -75,7 +78,7 @@ Except for the first video 1.1x speed for GIF compression, all the videos are at
 
 Placing 3mm-diameter wire in 5mm fork:
 <img src="./assets/place wire.gif" width="600">
-
+<br>
 Stacking 2 coke bottles:
 <img src="./assets/stack coke.gif" width="600">
 
@@ -83,11 +86,17 @@ Stacking 2 coke bottles:
 
 Cleaning the table:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/McLAlGZYsGI?si=PSKEG8YgOBjQmO_c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<a href="https://www.youtube.com/watch?v=McLAlGZYsGI">
+  <img src="https://img.youtube.com/vi/McLAlGZYsGI/0.jpg" width="600" height="400" alt="清理桌子视频">
+</a>
+
+<br>
 
 Plugging the key into holes:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/JSmodS4zys0?si=Bt8_EnqNdy6HGjO8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<a href="https://www.youtube.com/watch?v=JSmodS4zys0">
+  <img src="https://img.youtube.com/vi/JSmodS4zys0/0.jpg" width="600" height="400" alt="将钥匙插入孔中视频">
+</a>
 
 ## Performance
 
