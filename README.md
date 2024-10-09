@@ -32,6 +32,10 @@
   </a>
 </p>
 
+<div align="center">
+  <h4>This repo originates from <a href="https://humanoid-manipulation.github.io/">Humanoid Manipulation Project</a></h4>
+</div>
+
 ## Introduction
 
 This repository is designed to retarget human arm movements to 7 degrees of freedom humanoid robot arm motions.
@@ -45,26 +49,58 @@ Computer --joint angles--> Robot
 You only need to provide your **robot's control API** in `interface.py` and **forward kinematics** in `arms_retarget.py` to achieve teleoperation of your robot.
 It also provides a first-person view, giving the operator an immersive feeling when controlling the robot.
 
-
-This repository combines the advantages of [VisionProTeleop](https://github.com/Improbable-AI/VisionProTeleop), [television](https://github.com/OpenTeleVision/TeleVision), and [relaxedIK](https://github.com/uwgraphics/relaxed_ik) to achieve **stable**, **fast**, and **accurate** robot teleoperation. 
+This repository combines the advantages of [VisionProTeleop](https://github.com/Improbable-AI/VisionProTeleop), [television](https://github.com/OpenTeleVision/TeleVision), and [relaxedIK](https://github.com/uwgraphics/relaxed_ik) to achieve **stable**, **fast**, and **accurate** robot teleoperation.
 
 The core idea is: because 7-DOF robot arms have redundancy, there can be multiple solutions for the elbow position. To eliminate the redundancy, we determine the unique solution of the first 5 degrees of freedom through the forearm orientation, and then calculate the Euler angles of the wrist to determine the last 2 degrees of freedom. It requires the VR device to provide the poses more than hands skeleton, also elbow and forearm.
 
+## Demo
 
+Except for the first video 1.1x speed for GIF compression, all the videos are at 1x speed.
 
-## DEMO
+### Arms
 
-The code is tested on 14th gen i5 intel CPU, using 1 core. 
+<img src="./assets/first test.gif" width="800">
 
-The main loop runs at **90hz**. 
+### Hands
+
+<!-- <img src="./assets/dex hand.gif" width="450"> -->
+<img src="./assets/dex hand2.gif" width="400">
+<img src="./assets/dex hand3.gif" width="400">
+
+### Upper body
+
+<img src="./assets/upper body.gif" width="600">
+
+### Short Tasks
+
+Placing 3mm-diameter wire in 5mm fork:
+<img src="./assets/place wire.gif" width="600">
+
+Stacking 2 coke bottles:
+<img src="./assets/stack coke.gif" width="600">
+
+### Long Tasks with Visualizations
+
+Cleaning the table:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/McLAlGZYsGI?si=PSKEG8YgOBjQmO_c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Plugging the key into holes:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JSmodS4zys0?si=Bt8_EnqNdy6HGjO8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+## Performance
+
+The code is tested on 14th gen i5 intel CPU, using 1 core.
+
+The main loop runs at **90hz**.
 
 The control latency is less than **30ms**, vision latency not tested.
 
 The human-in-the-loop accuracy is less than **3mm** (partially depends on hardware).
 
-TODO
-
 ## Difference with other repo
+
 [Open-Television](https://github.com/OpenTeleVision/TeleVision)
 Open-Television transmits hand poses through WebXR. This repo uses VisionPro app's API to obtain hand and forearm poses. Therefore, it can obtain more information for retargeting (especially the elbow), enabling full degrees of freedom control. This repo also uses relaxed IK to achieve stable control process, providing stable solutions when handling large-scale movements, without entering strange postures.
 
@@ -75,7 +111,7 @@ Unitree's avp teleoperate provides teleoperation for Unitree based on H1_2's URD
 Anyteleop mainly focuses on teleoperating co-robots. This library focuses on teleoperating 7-DOF humanoid arms, with degrees of freedom distributed as 3-2-2 or 3-1-3 like human.
 
 [dex-retargeting](https://github.com/dexsuite/dex-retargeting)
-Dex-retargeting is a general-purpose hand retargeting. This repo only adapts to 6-DOF retargeting similar to the Inspire hand. If you are using   other hand types, feel free to use dex-retargeting. And it is welcome to contribute to other hand types.
+Dex-retargeting is a general-purpose hand retargeting. This repo only adapts to 6-DOF retargeting similar to the Inspire hand. If you are using other hand types, we highly recommend you to use dex-retargeting. And it is welcome to contribute to other hand types.
 
 ## File Structure
 
@@ -116,10 +152,11 @@ Change the web server address in the app to your server address in [🌐RealityV
 
 How to install the app, refer to https://github.com/Improbable-AI/VisionProTeleop/blob/main/how_to_install.md
 
-Then your computer can receive the hand tracking data as: 
+Then your computer can receive the hand tracking data as:
+
 ```python
 from avp_stream import VisionProStreamer
-avp_ip = "10.31.181.201"   # example IP 
+avp_ip = "10.31.181.201"   # example IP
 s = VisionProStreamer(ip = avp_ip, record = False)
 
 while True:
@@ -135,12 +172,11 @@ pip install -r requirements.txt
 
 ##### 3 install television
 
-For first person view. 
+For first person view.
 
 You can skip this if you do not need.
 
 Refer to https://github.com/OpenTeleVision/TeleVision, Local streaming part.
-
 
 ##### 4 fill the forward kinematics
 
@@ -155,7 +191,7 @@ In `interface.py`, fill the `send_command` function to send the joint angles to 
 
 The fft_ai's humanoid robot and Inspire's hand examples are given in `interface.py`.
 
-## Tests 
+## Tests
 
 1. Test the image server
 
@@ -163,6 +199,7 @@ The fft_ai's humanoid robot and Inspire's hand examples are given in `interface.
 cd ~/humanoid-arm-retarget
 python sliverscreen.py
 ```
+
 It is the image server. Run it and you should be able to see the stream from the camera in the browser. You can use the phone to test, making sure the phone and computer are in the same local network.
 
 2. Open the tracking streamer app on your VisionPro.
@@ -174,22 +211,20 @@ You should be able to see the stream in the app. And the hand tracking data will
 ```
 python teleop.py
 ```
+
 It is the teleoperation main loop. It should be able to give the joint angles to the robot.
 
 4. Send the joint angles to the robot.
 
 Snap your left fingers to send the data to the robot.
 
-
-
 ## Reference
 
 Park, Y. Teleopeation System using Apple Vision Pro (Version 0.1.0) [Computer software]. https://github.com/Improbable-AI/VisionProTeleop
 
-Rakita, D., Mutlu, B., & Gleicher, M. (2018). RelaxedIK: Real-time Synthesis of Accurate and Feasible Robot Arm Motion. In Proceedings of Robotics: Science and Systems. Pittsburgh, Pennsylvania. 
+Rakita, D., Mutlu, B., & Gleicher, M. (2018). RelaxedIK: Real-time Synthesis of Accurate and Feasible Robot Arm Motion. In Proceedings of Robotics: Science and Systems. Pittsburgh, Pennsylvania.
 
 Cheng, X., Li, J., Yang, S., Yang, G., & Wang, X. (2024). Open-TeleVision: Teleoperation with Immersive Active Visual Feedback. arXiv preprint arXiv:2407.01512.
-
 
 ## Data Structure
 
@@ -222,13 +257,10 @@ The coordinate system convention is as follows:
 
 ![hand_skeleton_convention](./assets/hand_skeleton_convention.png)
 
-The 27 frames correspond to the 27 rotation matrices in the data. 
+The 27 frames correspond to the 27 rotation matrices in the data.
 
-The origin of 0th and 25th frames is the same. The coordinate axes directions are different. 
-The 25th frame's coordinate axes follow the direction of the forearm. The 0th reference frame's coordinate axes follow the direction of the palm. 
+The origin of 0th and 25th frames is the same. The coordinate axes directions are different.
+The 25th frame's coordinate axes follow the direction of the forearm. The 0th reference frame's coordinate axes follow the direction of the palm.
 The coordinate axes of the 25th and 26th reference frames are identical. The position of 26th is at the elbow.
-
-
-
 
 <!-- </div> -->
