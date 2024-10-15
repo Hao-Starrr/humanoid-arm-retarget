@@ -78,7 +78,7 @@ Except for the first video 1.1x speed for GIF compression, all the videos are at
 
 ### Upper body
 
-<img src="./assets/upper body.gif" width="600">
+<!-- <img src="./assets/upper body.gif" width="600"> -->
 
 https://github.com/user-attachments/assets/9c013594-2181-47f7-a190-bb754c1fd934
 
