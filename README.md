@@ -61,7 +61,7 @@ You can add your own robot's configuration files.
 
 ## Demo
 
-Except for the first video 1.1x speed for GIF compression, all the videos are at 1x speed.
+<!-- Except for the first video 1.1x speed for GIF compression, all the videos are at 1x speed. -->
 
 ### Arms
 
