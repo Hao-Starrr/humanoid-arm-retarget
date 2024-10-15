@@ -49,9 +49,15 @@ Computer --joint angles--> Robot
 You only need to provide your **robot's control API** in `interface.py` and **forward kinematics** in `arms_retarget.py` to achieve teleoperation of your robot.
 It also provides a first-person view, giving the operator an immersive feeling when controlling the robot.
 
-This repository combines the advantages of [VisionProTeleop](https://github.com/Improbable-AI/VisionProTeleop), [television](https://github.com/OpenTeleVision/TeleVision), and [relaxedIK](https://github.com/uwgraphics/relaxed_ik) to achieve **stable**, **fast**, and **accurate** robot teleoperation.
+This repository combines the advantages of [VisionProTeleop](https://github.com/Improbable-AI/VisionProTeleop), [television](https://github.com/OpenTeleVision/TeleVision) to achieve **stable**, **fast**, and **accurate** robot teleoperation.
 
-The core idea is: because 7-DOF robot arms have redundancy, there can be multiple solutions for the elbow position. To eliminate the redundancy, we determine the unique solution of the first 5 degrees of freedom through the forearm orientation, and then calculate the Euler angles of the wrist to determine the last 2 degrees of freedom. It requires the VR device to provide the poses more than hands skeleton, also elbow and forearm.
+It provides configuration files for the following robots:
+
+- fftai_gr1
+- fftai_gr2
+- open_loong
+
+You can add your own robot's configuration files.
 
 ## Demo
 
@@ -74,6 +80,8 @@ Except for the first video 1.1x speed for GIF compression, all the videos are at
 
 <img src="./assets/upper body.gif" width="600">
 
+https://github.com/user-attachments/assets/9c013594-2181-47f7-a190-bb754c1fd934
+
 ### Short Tasks
 
 <img src="./assets/place wire.gif" width="600">
@@ -85,7 +93,7 @@ Cleaning the table:
 
 <a href="https://www.youtube.com/watch?v=McLAlGZYsGI">
   <img src="https://img.youtube.com/vi/McLAlGZYsGI/0.jpg" width="600" height="400" alt="清理桌子视频">
-</a>  
+</a>
 
 <br>
 
@@ -270,3 +278,27 @@ The 25th frame's coordinate axes follow the direction of the forearm. The 0th re
 The coordinate axes of the 25th and 26th reference frames are identical. The position of 26th is at the elbow.
 
 <!-- </div> -->
+
+## Cite
+
+If you find the retarget algorithm in this repository useful for your research, you can cite:
+
+```
+@software{wenhao2024humanoid_retarget,
+    title={Humanoid Arm Retarget},
+    author={Wenhao Wang},
+    year={2024},
+    url = {https://github.com/Hao-Starrr/humanoid-arm-retarget},
+}
+```
+
+and our work on humanoid manipulation:
+
+```
+@article{ze2024humanoid_manipulation,
+  title   = {Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies},
+  author  = {Yanjie Ze and Zixuan Chen and Wenhao Wang and Tianyi Chen and Xialin He and Ying Yuan and Xue Bin Peng and Jiajun Wu},
+  year    = {2024},
+  journal = {arXiv preprint arXiv:2410.10803}
+}
+```
