@@ -61,6 +61,10 @@ You can add your own robot's configuration files.
 
 ## Demo
 
+### Snap to launch!
+
+<img src="./assets/snap.gif" width="800">
+
 <!-- Except for the first video 1.1x speed for GIF compression, all the videos are at 1x speed. -->
 
 ### Arms
@@ -89,7 +93,7 @@ https://github.com/user-attachments/assets/9c013594-2181-47f7-a190-bb754c1fd934
 
 ### Long Tasks with Visualizations
 
-Cleaning the table:
+Cleaning the table (click image to see the video):
 
 <a href="https://www.youtube.com/watch?v=McLAlGZYsGI">
   <img src="https://img.youtube.com/vi/McLAlGZYsGI/0.jpg" width="600" height="400" alt="清理桌子视频">
@@ -97,7 +101,7 @@ Cleaning the table:
 
 <br>
 
-Plugging the key into holes:
+Plugging the key into holes (click image to see the video):
 
 <a href="https://www.youtube.com/watch?v=JSmodS4zys0">
   <img src="https://img.youtube.com/vi/JSmodS4zys0/0.jpg" width="600" height="400" alt="将钥匙插入孔中视频">
