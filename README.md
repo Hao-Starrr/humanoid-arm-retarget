@@ -7,6 +7,8 @@
   </h3>
 </div>
 <p align="center">
+  ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+
   <!-- code check badges -->
   <!-- <a href='https://github.com/Hao-Starrr/humanoid-arm-retarget/blob/main/.github/workflows/test.yml'>
       <img src='https://github.com/Hao-Starrr/humanoid-arm-retarget/actions/workflows/test.yml/badge.svg' alt='Test Status' />
@@ -23,9 +25,9 @@
   <img src="https://img.shields.io/github/v/release/Hao-Starrr/humanoid-arm-retarget.svg?include_prereleases&sort=semver" alt="Releases">
   </a>
   <!-- pypi badge -->
-  <a href="https://github.com/Hao-Starrr/humanoid-arm-retarget/tags">
-  <img src="https://static.pepy.tech/badge/dex_retargeting/month" alt="pypi">
-  </a>
+  <!-- <a href="https://github.com/Hao-Starrr/humanoid-arm-retarget/tags">
+  <img src="https://static.pepy.tech/badge/humanoid-arm-retarget/month" alt="pypi">
+  </a> -->
   <!-- license badge apache -->
   <a href="https://github.com/Hao-Starrr/humanoid-arm-retarget/blob/main/LICENSE">
       <img alt="License" src="https://img.shields.io/badge/License-GNU%20GPL-blue">
